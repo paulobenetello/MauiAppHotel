@@ -32,7 +32,7 @@
                              Increment="1"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
-                            Text="Adultos"/>
+                            Text="Crianças"/>
                     <Label Grid.Row="1" Grid.Column="1"
                            TextColor="{StaticResource MidnightBlue}"
                            Text="{Binding Value}"
@@ -46,7 +46,8 @@
 
                 <Label Text="Escolha a sua suíte"/>
                 <Picker x:Name="pck_quarto"
-                        Title="Selecione sua acomodação"/>
+                        Title="Selecione sua acomodação"
+                        ItemDisplayBinding="{Binding Descricao}"/>
 
                 <Frame Padding="10"
                        Margin="10"
@@ -56,6 +57,7 @@
                         <HorizontalStackLayout>
                             <Label Text=" Chek-in:"/>
                             <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy"/>
                         </HorizontalStackLayout>
                         
@@ -67,9 +69,13 @@
                     </VerticalStackLayout>
                 </Frame>
 
+                <Button Text="Avançar"
+                        BackgroundColor="{StaticResource MidnightBlue}"
+                        Clicked="Button_Clicked" Margin="10"/>
+
                 <Button Text="Sobre Nós"
                         BackgroundColor="{StaticResource MidnightBlue}"
-                        Clicked="Button_Clicked"/>
+                        Clicked="Button_Clicked2" Margin="10"/>
             </VerticalStackLayout>
         </Frame>
     </VerticalStackLayout>
