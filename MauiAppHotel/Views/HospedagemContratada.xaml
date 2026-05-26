@@ -5,8 +5,10 @@
              Title="HospedagemContratada"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="{StaticResource Gray100}">
+    
     <VerticalStackLayout VerticalOptions="CenterAndExpand">
-        <Label Text="Suite Presidencial"
+        
+        <Label Text="{Binding QuartoSelecionado.Descricao}"
                TextColor="{StaticResource MidnightBlue}"
                FontFamily="CauseVariable"
                FontSize="50"
@@ -17,12 +19,12 @@
             <HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Adultos: "/>
-                    <Label Text="2"/>
+                    <Label Text="{Binding QtdAdultos}"/>
                 </HorizontalStackLayout>
                 
                 <HorizontalStackLayout>
                     <Label Text="Crianças: "/>
-                    <Label Text="2"/>
+                    <Label Text="{Binding QtdCriancas}"/>
                 </HorizontalStackLayout>
             </HorizontalStackLayout>
         </Frame>
@@ -35,9 +37,9 @@
                 <Label Grid.Row="0" Grid.Column="1" Text="Check-out: "/>
                 <Label Grid.Row="0" Grid.Column="2" Text="Estadia: "/>
 
-                <Label Grid.Row="1" Grid.Column="0" Text="21/05/26"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="31/05/26"/>
-                <Label Grid.Row="1" Grid.Column="2" Text="10"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckin, StringFormat='{}{0:dd/MM/yyyy}'} "/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckout, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}"/>
             </Grid>
         </Frame>
 
@@ -45,7 +47,8 @@
                BackgroundColor="{StaticResource Gray300}">
             <HorizontalStackLayout>
                 <Label Text="Valor Total: "/>
-                <Label Text="R$500,00"/>
+                <Label Text="{Binding ValorTotal, StringFormat='{}{0:c}'}"
+                       TextColor="{StaticResource MidnightBlue}"/>
             </HorizontalStackLayout>
         </Frame>
 
